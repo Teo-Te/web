@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <title>Spring Boot Webapp</title>
+    <style>
+      input[type="radio"]:checked ~ label {
+        transform: scale(1.05);
+        color: #f59e0b;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Navbar -->
+    <header
+      class="container px-6 min-w-full pt-4 text-center h-40 md:h-32 bg-gradient-to-r from-cyan-100 to-blue-100"
+    >
+      <div
+        class="h-20 flex justify-center items-center w-20 mx-auto md:mx-0 md:mt-0 md:absolute top-5 left-10"
+      >
+        <img src="/images/todo-icon.png" alt="Task Icon" />
+        <p
+          class="md:absolute top-5 left-24 ml-2 font-bold text-blue-500 text-4xl"
+        >
+          ToDoApp
+        </p>
+      </div>
+      <div
+        class="flex items-center justify-center text-blue-500 font-semibold mt-4 space-x-4 md:space-x-10 md:absolute top-12 right-10 md:mt-0"
+      >
+        <a href="#features" class="hover:text-cyan-500 duration-200">
+          Features
+        </a>
+        <a href="#req" class="hover:text-cyan-500 duration-200">
+          Requirements
+        </a>
+        <a href="#testimonials" class="hover:text-cyan-500 duration-200">
+          Testimonials
+        </a>
+        <a href="#rating" class="hover:text-cyan-500 duration-200"> Rate Us </a>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <div
+      id="top"
+      class="flex flex-col max-w-full md:items-center mx-auto text-center px-10 pt-16 mb-40 md:mb-0 md:flex-row-reverse md:justify-between"
+    >
+      <img
+        src="/images/first-icon.png"
+        alt="Task Icon"
+        class="w-96 h-96 md:w-1/2 md:h-1/2 mx-auto mb-10"
+      />
+      <div class="md:w-1/2 md:mt-5 mb-20">
+        <h3 class="mb-8 text-4xl font-bold text-gray-700 md:text-5xl">
+          A place to keep track of all of your tasks
+        </h3>
+        <p class="max-w-3xl mx-auto mb-10 text-2xl text-gray-400">
+          Web Application made with Spring Boot, Thymeleaf, Tailwind CSS, JPA,
+          and PostgreSQL
+        </p>
+        <div
+          class="flex flex-col justify-center w-full space-y-6 text-xl text-white md:flex-row md:space-y-0 md:space-x-4"
+        >
+          <a
+            href="login"
+            class="p-4 px-8 rounded-full shadow-lg bg-cyan-500 duration-200 hover:opacity-80"
+          >
+            Login
+          </a>
+          <a
+            href="register"
+            class="p-4 px-8 rounded-full shadow-lg bg-blue-500 duration-200 hover:opacity-80"
+          >
+            Register
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Features Section -->
+    <div
+      id="features"
+      class="max-w-6xl mx-auto text-center px-10 mb-20 md:mb-40"
+    >
+      <h3 class="mb-8 text-4xl font-bold text-gray-700 md:text-5xl">
+        Features
+      </h3>
+      <div
+        class="flex flex-col justify-center w-full space-y-6 text-xl text-gray-400 md:flex-row md:space-y-0 md:space-x-4"
+      >
+        <div class="p-8 bg-white rounded-xl shadow-lg">
+          <svg
+            class="w-16 h-16 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            color="#06b6d4"
+            fill="none"
+          >
+            <path
+              d="M20.9977 12.5C20.9977 12.5 21 12 21 11.5C21 7.02166 21 4.78249 19.6088 3.39124C18.2175 2 15.9783 2 11.5 2C7.02166 2 4.78249 2 3.39124 3.39124C2 4.78249 2 7.02166 2 11.5C2 15.9783 2 18.2175 3.39124 19.6088C4.78249 21 7.02166 21 11.5 21C12.0307 21 12.5 20.9977 12.5 20.9977"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M2 7H21"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 16H11.5M6 16H7M10 12H16M6 12H7"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15 18.5H22M18.5 22L18.5 15"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <h4 class="mb-4 text-2xl font-bold text-gray-700">Create Tasks</h4>
+          <p class="text-gray-500">
+            Add tasks to your list and keep track of them
+          </p>
+        </div>
+        <div class="p-8 bg-white rounded-xl shadow-lg">
+          <svg
+            class="w-16 h-16 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            color="#06b6d4"
+            fill="none"
+          >
+            <path
+              d="M21 11.5C21 7.02166 21 4.78249 19.6088 3.39124C18.2175 2 15.9783 2 11.5 2C7.02166 2 4.78249 2 3.39124 3.39124C2 4.78249 2 7.02166 2 11.5C2 15.9783 2 18.2175 3.39124 19.6088C4.72972 20.9472 6.85301 20.998 11 20.9999"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M2 7H21"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 16H11.5M6 16H7M10 12H16M6 12H7"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M21.2633 14.8717C20.3622 13.8651 19.8215 13.925 19.2208 14.1048C18.8003 14.1647 17.3585 15.8422 16.7578 16.3765C15.7714 17.3478 14.7806 18.3479 14.7153 18.4784C14.5285 18.781 14.3548 19.3172 14.2707 19.9163C14.1145 20.815 13.8041 21.7815 14.1746 21.9133C14.3548 22.153 15.2559 21.8335 16.157 21.7017C16.7578 21.5938 17.1783 21.474 17.4787 21.2943C17.8992 21.0426 18.6801 20.1559 20.0258 18.8379C20.8697 17.9521 21.6838 17.34 21.9241 16.7409C22.1644 15.8422 21.804 15.3629 21.2633 14.8717Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+          <h4 class="mb-4 text-2xl font-bold text-gray-700">Edit Tasks</h4>
+          <p class="text-gray-500">
+            Edit tasks on your list and keep them up to date
+          </p>
+        </div>
+        <div class="p-8 bg-white rounded-xl shadow-lg">
+          <svg
+            class="w-16 h-16 mx-auto mb-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            color="#06b6d4"
+            fill="none"
+          >
+            <path
+              d="M20.9977 12.5C20.9977 12.5 21 12.0307 21 11.5C21 7.02166 21 4.78249 19.6088 3.39124C18.2175 2 15.9783 2 11.5 2C7.02166 2 4.78249 2 3.39124 3.39124C2 4.78249 2 7.02166 2 11.5C2 15.9783 2 18.2175 3.39124 19.6088C4.78249 21 7.02166 21 11.5 21C12.0307 21 12.5 20.9977 12.5 20.9977"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M2 7H21"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 16H11.5M6 16H7M10 12H16M6 12H7"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 16L19 19M19 19L22 22M19 19L16 22M19 19L22 16"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <h4 class="mb-4 text-2xl font-bold text-gray-700">Delete Tasks</h4>
+          <p class="text-gray-500">
+            Delete tasks from your list when they are completed
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Requirements Check Section -->
+    <div id="req">
+      <div class="max-w-6xl mx-auto text-center px-10 mt-32">
+        <h3 class="mb-8 text-4xl font-bold text-gray-700 md:text-5xl">
+          Requirements Check
+        </h3>
+        <div class="flex flex-col md:flex-row md:space-x-32 mb-20 md:mb-40">
+          <div class="md:w-1/2">
+            <img
+              src="/images/checklist.png"
+              alt="computer"
+              class="md:scale-150 md:mt-20 mx-auto mb-10 md:mb-0"
+            />
+          </div>
+          <div
+            class="flex flex-col items-center mt-16 mb-24 space-y-12 text-xl md:mt-28 md:mb-40 md:text-left md:w-1/2 md:pl-16"
+          >
+            <div>
+              <div class="max-w-md font-bold text-gray-500 space-y-4">
+                <p class="flex justify-between">
+                  3 different user Interfacs
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    color="#06b6d4"
+                    fill="none"
+                  >
+                    <path
+                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 12.5L10.5 15L16 9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                <p class="flex justify-between">
+                  3 database tables
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    color="#06b6d4"
+                    fill="none"
+                  >
+                    <path
+                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 12.5L10.5 15L16 9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                <p class="flex justify-between">
+                  CRUD operations
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    color="#06b6d4"
+                    fill="none"
+                    class="ml-5"
+                  >
+                    <path
+                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 12.5L10.5 15L16 9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                <p class="flex justify-between">
+                  LinkedList, Stack or Queue
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    color="#06b6d4"
+                    fill="none"
+                  >
+                    <path
+                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 12.5L10.5 15L16 9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                <p class="flex justify-between">
+                  Usage of ArrayLists
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    color="#06b6d4"
+                    fill="none"
+                  >
+                    <path
+                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 12.5L10.5 15L16 9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+                <p class="flex justify-between">
+                  Generic methods or classes
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    color="#06b6d4"
+                    fill="none"
+                    class="ml-5"
+                  >
+                    <path
+                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M8 12.5L10.5 15L16 9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Developer's Testimonials Section -->
+    <div id="testimonials" class="container mx-auto px-6 pt-12 mb-20 md:mb-40">
+      <h3 class="text-center mb-8 text-4xl font-bold text-gray-700 md:text-5xl">
+        Developer's Testimonials
+      </h3>
+      <div
+        class="relative flex flex-col w-full space-y-6 justify-center md:flex-row md:space-y-0 md:space-x-12"
+      >
+        <img
+          src="/images/bg-quotes.png"
+          alt="Quotes"
+          class="absolute left-1 -top-0 w-10 md:left-52 md:-top-12 md:w-20"
+        />
+        <div
+          class="flex flex-col p-10 space-y-6 rounded-lg md:w-1/3 bg-white shadow-lg"
+        >
+          <p class="text-sm leading-5 md:text-lg">
+            I believe that I gave it my all and I feel happy with the results of
+            this project. This project was a great opportunity to learn and
+            improve my skills in web development with Spring Boot. This is the
+            4th version of the ToDoApp project starting since computer
+            applications course in 2022. Let's hope for a good grade in this
+            project!
+          </p>
+          <div class="flex space-x-4">
+            <img
+              src="/images/arteo.jpeg"
+              alt="Profile 1"
+              class="w-10 h-10 rounded-full"
+            />
+            <div>
+              <h5 class="text-sm font-semibold">Arteo</h5>
+              <p class="text-xs font-extralight">ToDoApp Developer</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col p-10 space-y-6 rounded-lg md:w-1/3 bg-white shadow-lg"
+        >
+          <p class="text-sm leading-5 md:text-lg">
+            Throughout these versions of ToDoApp, my primary focus was on
+            improving functionality, usability, and performance. The ToDoApp
+            project has been a significant learning journey, helping me hone my
+            skills in web development, particularly with Spring Boot. The
+            successful completion of this project reflects the skills learned in
+            this course
+          </p>
+          <div class="flex space-x-4">
+            <img
+              src="/images/fabjo.jpeg"
+              alt="Profile 1"
+              class="w-10 h-10 rounded-full"
+            />
+            <div>
+              <h5 class="text-sm font-semibold">Fabjo</h5>
+              <p class="text-xs font-extralight">ToDoApp Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rate Us Section -->
+    <div id="rating" class="container mx-auto max-w-xl px-6">
+      <h3 class="mb-8 text-4xl text-center font-bold text-gray-700 md:text-5xl">
+        Give Us a Rating
+      </h3>
+      <form
+        id="starRating"
+        action="#"
+        th:action="@{/rate}"
+        method="post"
+        class="flex flex-col justify-center bg-white rounded-lg p-10 shadow-lg mx-auto"
+      >
+        <p class="mx-auto mb-10 text-xl text-center text-gray-400">
+          From 1 to 5 stars, <br />
+          how would you rate this app?
+        </p>
+        <div class="px-20 space-y-2 mr-3">
+          <div class="flex justify-center space-x-4">
+            <input
+              type="radio"
+              id="5-stars"
+              name="rating"
+              value="5"
+              class="hidden"
+              checked
+            />
+            <label
+              for="5-stars"
+              class="flex cursor-pointer hover:text-yellow-500 hover:scale-105 duration-200"
+            >
+              <span th:each="i : ${#numbers.sequence(1, 5)}">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="yellow"
+                >
+                  <path
+                    d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <div class="flex justify-center space-x-4">
+            <input
+              type="radio"
+              id="4-stars"
+              name="rating"
+              value="4"
+              class="hidden"
+            />
+            <label
+              for="4-stars"
+              class="flex cursor-pointer hover:text-yellow-500 hover:scale-105 duration-200"
+            >
+              <span th:each="i : ${#numbers.sequence(1, 4)}">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="yellow"
+                >
+                  <path
+                    d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <div class="flex justify-center space-x-4">
+            <input
+              type="radio"
+              id="3-stars"
+              name="rating"
+              value="3"
+              class="hidden"
+            />
+            <label
+              for="3-stars"
+              class="flex cursor-pointer hover:text-yellow-500 hover:scale-105 duration-200"
+            >
+              <span th:each="i : ${#numbers.sequence(1, 3)}">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="yellow"
+                >
+                  <path
+                    d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <div class="flex justify-center space-x-4">
+            <input
+              type="radio"
+              id="2-stars"
+              name="rating"
+              value="2"
+              class="hidden"
+            />
+            <label
+              for="2-stars"
+              class="flex cursor-pointer hover:text-yellow-500 hover:scale-105 duration-200"
+            >
+              <span th:each="i : ${#numbers.sequence(1, 2)}">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="yellow"
+                >
+                  <path
+                    d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <div class="flex justify-center space-x-4">
+            <input
+              type="radio"
+              id="1-star"
+              name="rating"
+              value="1"
+              class="hidden"
+            />
+            <label
+              for="1-star"
+              class="cursor-pointer hover:text-yellow-500 hover:scale-105 duration-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="30"
+                height="30"
+                fill="yellow"
+              >
+                <path
+                  d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </label>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="p-4 text-white text-xl mt-5 mx-auto px-8 rounded-full shadow-lg bg-cyan-500 duration-200 hover:opacity-80"
+        >
+          Submit
+        </button>
+      </form>
+      <div class="mt-4">
+        <p
+          class="mb-8 text-xl text-center p-10 font-bold text-gray-700 md:text-2xl transition ease-in-out duration-200"
+          th:text="${ratingText}"
+        >
+          Waiting...
+        </p>
+      </div>
+    </div>
+    <!-- User Reviews Section -->
+    <h3 class="text-center mb-8 text-4xl font-bold text-gray-700 md:text-5xl">
+      User Reviews
+    </h3>
+    <div class="container mx-auto px-6 pt-12 mb-20 md:mb-40 overflow-x-auto">
+      <div class="flex space-x-4 mb-4">
+        <div
+          th:each="rating : ${ratings}"
+          class="min-w-64 max-h-80 space-y-6 justify-center items-center md:flex-row md:space-y-0 md:space-x-12 inline-block"
+        >
+          <div
+            class="flex flex-col p-10 space-y-6 rounded-lg bg-white shadow-lg h-full"
+          >
+            <p
+              th:text="${rating.description}"
+              class="text-sm leading-5 md:text-lg h-3/4 overflow-auto"
+            ></p>
+            <div class="flex space-x-1 h-1/4">
+              <div class="flex flex-col">
+                <h5 th:text="${rating.username}" class="text-sm font-semibold">
+                  Anonymous
+                </h5>
+                <div class="flex">
+                  <span th:each="i : ${#numbers.sequence(1, rating.stars)}">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="yellow"
+                    >
+                      <path
+                        d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-r from-cyan-100 to-blue-100">
+      <div class="container">
+        <div
+          class="flex flex-col p-4 items-center justify-between md:flex-row md:mx-16"
+        >
+          <div class="flex justify-center items-center pb-4">
+            <img src="/images/todo-icon.png" alt="" class="w-24 h-24" />
+            <h1 class="text-2xl font-bold pl-4 text-gray-700">ToDoApp</h1>
+          </div>
+          <div
+            class="flex flex-col items-center justify-between flex-1 mb-10 space-y-6 md:flex-row md:space-y-0 md:mb-0 text-grayishBlue"
+          >
+            <div
+              class="flex flex-col space-y-4 md:flex-row md:ml-24 md:space-x-24 md:space-y-0"
+            >
+              <div class="flex flex-col space-y-4 text-center md:text-left">
+                <div>
+                  <a href="#top" class="hover:text-cyan-500">Top</a>
+                </div>
+                <div>
+                  <a href="#features" class="hover:text-cyan-500">Features</a>
+                </div>
+              </div>
+              <div class="flex flex-col space-y-4 text-center md:text-left">
+                <div>
+                  <a href="#req" class="hover:text-cyan-500">Requirements</a>
+                </div>
+                <div>
+                  <a href="#testimonials" class="hover:text-cyan-500"
+                    >Testimonials</a
+                  >
+                </div>
+              </div>
+              <div class="flex flex-col space-y-4 text-center md:text-left">
+                <div>
+                  <a href="#rating" class="hover:text-cyan-500">Rate Us</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <a
+                href="login"
+                class="p-4 px-8 mr-4 rounded-full text-white shadow-lg bg-cyan-500 duration-200 hover:opacity-80"
+              >
+                Login
+              </a>
+              <a
+                href="register"
+                class="p-4 px-8 rounded-full shadow-lg text-white bg-blue-500 duration-200 hover:opacity-80"
+              >
+                Register
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
